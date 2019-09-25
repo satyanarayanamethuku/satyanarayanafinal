@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{%  static 'css12/bootstrap.min.css' %}">
+
+
+    <style>
+        body{
+               font-size: 20px;
+               font-family: 'Work Sans', sans-serif;
+               color: #333;
+               font-weight: 300;
+
+                 background-color: #f8f6f0;
+ }
+         hr{
+        border: 2px solid pink;
+        }
+        .img1{
+            border: 2px solid lightblue;
+            border-radius: 50%;
+            float: right;
+        }
+        .time{
+            float: right;
+        }
+        h1
+        {
+            text-align: center;
+            font-weight: 300;
+          margin: 30px;
+         padding: 10px;
+             font-size: 20px;
+     background-color: #444;
+    color: #fff;
+        }
+        .time
+        {
+            border:2px solid lightblue;
+            border-radius: 40%;
+        }
+    </style>
+</head>
+<body>
+<div style="font-weight: bold" id="quiz-time-left" class="time"></div>
+<script type="text/javascript">
+    var total_seconds=60*1
+    var c_minutes = parseInt(total_seconds/60);
+    var c_seconds = parseInt(total_seconds%60);
+    function CheckTime() {
+        document.getElementById("quiz-time-left").innerHTML
+        ="time Left: "+ c_minutes+' minutes'+c_seconds +' seconds';
+        if (total_seconds <= 0){
+            setTimeout('document.quiz.submit()', 1);
+        } else{
+            total_seconds = total_seconds - 1;
+            c_minutes = parseInt(total_seconds/60);
+            c_seconds = parseInt(total_seconds%60);
+            setTimeout("CheckTime()",1000);
+        }
+
+
+    }
+ setTimeout("CheckTime()",1000);
+</script>
+
+exam code: {{ query }}
+<hr>
+Name:{{ a.firstName}} {{ a.lastName }}<br>
+username:{{ a.username }}<br>
+state:{{ a.state }}
+<img  class="img1"src="{{a.personPhoto.url}}" height="70px" width="60px"><br><br>
+
+
+
+
+
+<form action="/thank/" method = "POST"  name="quiz" id="form">
+    {% csrf_token %}
+    <h1>Bhart Excellence Scholorship Test</h1>
+    {% for question in contacts %}
+<div class = 'question'>{{question.id}}.{{ question.question }} </div>
+
+
+
+<hr>
+<div id= "choices" class='select'>
+    <input type = "radio" name="{{question.id}}" value="{{question.option1}}" >&nbsp;&nbsp;A.&nbsp;&nbsp;{{question.option1}}<br>
+    <input type = "radio" name="{{question.id}}" value="{{question.option2}}" >&nbsp;&nbsp;B.&nbsp;&nbsp;{{question.option2}}<br>
+    <input type = "radio" name="{{question.id}}" value="{{question.option3}}" >&nbsp;&nbsp;C.&nbsp;&nbsp;{{question.option3}}<br>
+    <input type = "radio" name="{{question.id}}" value="{{question.option4}}" >&nbsp;&nbsp;D.&nbsp;&nbsp;{{question.option4}}<br>
+</div><br>
+{% endfor %}
+
+<input type="submit" value="submit">
+</form>
+
+
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css12/bootstrap.min.css' %}">
+</head>
+<body>
+{#  {{ msg }}#}
+<h1>student login page</h1>
+{% for message in messages %}
+{#    <h3>{{message}}</h3>#}
+     <script>
+         alert('{{ message }}');
+    </script>
+    {% endfor %}
+</div>
+<form action="/studentlogin/" method="POST">
+    {% csrf_token %}
+    enter username:
+    <input type="text" placeholder="User Name" name="username"><br><br>
+    enter password:
+    <input type="date" placeholder="Date Of Birth" name="dob"><br><br>
+    <input type="submit" value="submit">
+</form><br><br>
+<a href="/forget"  class="btn btn-primary" role="button">Forget password</a>
+</body>
+</html>

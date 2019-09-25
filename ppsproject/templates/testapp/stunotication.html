@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>student notification</h1>
+<table border="2">
+    <tr>
+        <th>Subject</th>
+        <th>import date</th>
+        <th>information</th>
+    </tr>
+    {% for b in form %}
+        <tr>
+          <td>{{ b.subject }}</td>
+          <td>{{ b.date }}</td>
+          <td>{{ b.body }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

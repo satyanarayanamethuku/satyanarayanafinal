@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>well come to cbse bord student register</h1>
+{% for b in form %}
+
+    <ul>
+    <li>ID:{{ b.id }}</li>
+    <li>Name:{{ b.firstName}}</li>
+    <li>Password:{{ b.lastName }}</li>
+        <li>{{ b.date_of_birth }}</li>
+        <li>{{ b.board }}</li>
+        <li>{{ b.fatherName }}</li>
+        <li>{{ b.motherName }}</li>
+        <li>{{ b.qualification }}</li>
+        <li>{{ b.schoolName }}</li>
+        <li>{{ b.schoolAddress }}</li>
+    <li>{{ b.homeAddress }}</li>
+    <li>{{ b.state }}</li>
+    <li>{{ b.aadharNumber }}</li>
+    <li>{{ b.phoneNumber }}</li>
+    <li>{{ b.emailID }}</li>
+    <li>{{ b.personPhoto }}</li>
+    <li>{{ b.signaturePhoto }}</li>
+    <li>{{ b.username }}</li>
+
+
+    </ul>
+
+
+{% endfor %}
+</body>
+</html>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Add subject</h1>
+<form method="POST">
+    {% csrf_token %}
+    id:
+    <input type="text" name="id1" required><br>
+    subject:
+    <input type="text" name="name" required><br>
+    <input type="submit" value="add">
+</form>
+</body>
+</html>

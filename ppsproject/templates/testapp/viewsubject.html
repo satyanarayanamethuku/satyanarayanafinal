@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="2">
+    <tr>
+        <th>Id</th>
+        <th>Subject</th>
+    </tr>
+    {% for b in form %}
+        <tr>
+        <td>{{ b.sub_id }}</td>
+        <td>{{ b.name }}</td>
+        </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        nav a{
+
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+<h1>well come to dash bord</h1>
+well come :{{ name }}<br>
+your permisssion:{{ access }}
+<nav>
+{#    {% if name in 'ssss' %}#}
+
+    {% if  access in 'notifications' %}
+        <a href="/stuprofile">Student Profile</a> |
+        <a href="/profile">View Profile</a> |
+        <a href="/login">Logout</a>
+    {% elif  access in 'subject' %}
+        <a href="/dash2">Dashbord</a> |
+         <a href="/profile">View Profile</a> |
+        <a href="/login">Logout</a>
+    {% elif  access in 'studentscreen' %}
+        <a href="#">Result</a> |
+         <a href="/profile">View Profile</a> |
+        <a href="/login">Logout</a>
+
+    {% else %}
+       <a href="/profile">View Profile</a> |
+    <a href="/admin1">Add Admin</a> |
+    <a href="/stuprofile">Student Profile</a> |
+    <a href="/examhome">Exam</a> |
+    <a href="#">Subject</a> |
+        <a href="#">Result</a> |
+
+    <a href="/dash2">Dashbord</a> |
+    <a href="/noti">Notifications</a> |
+        <a href="/all">View all Admin Profiles</a> |
+    <a href="/login">Logout</a>
+    {% endif %}
+
+</nav>
+</body>
+</html>

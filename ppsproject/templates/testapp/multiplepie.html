@@ -1,0 +1,40 @@
+<!doctype html>
+{% load staticfiles %}
+{% load nvd3_tags %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link media="all" href="{% static 'nv.d3.css' %}" type="text/css" rel="stylesheet" />
+   <script type="text/javascript" src='{% static 'd3.min.js' %}'></script>
+   <script type="text/javascript" src='{% static 'nv.d3.min.js' %}'></script>
+
+    <style>
+        .wwww
+        {
+            float: right;
+
+        }
+    </style>
+{#     <link href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.7.1/nv.d3.min.css" rel="stylesheet" />#}
+{#    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>#}
+{#    <script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.7.1/nv.d3.min.js"></script>#}
+    {% load_chart charttype chartdata "discretebarchart_container"  %}
+    {% load_chart charttype2 chartdata2 "piechart_container1" extra2  %}
+
+</head>
+<body>
+<body>
+    <h1>Cbse Vs State Vs Icse</h1>
+    {% include_container "discretebarchart_container" 400 300 %}
+<br>
+    <div class="wwww">
+    <h2>class register</h2>
+    {% include_container "piechart_container1" 400 500 %}
+    </div>
+</body>
+</body>
+</html>

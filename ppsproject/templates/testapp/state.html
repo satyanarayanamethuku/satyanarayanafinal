@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>well come to state bord student register</h1>
+{% for b in form %}
+
+    <ul>
+    <li>ID:{{ b.id }}</li>
+    <li>Name:{{ b.firstName }}</li>
+    <li>Password:{{ b.lastName }}</li>
+    <li>Bord:{{ b.board }}</li>
+
+    </ul>
+
+
+{% endfor %}
+</body>
+</html>

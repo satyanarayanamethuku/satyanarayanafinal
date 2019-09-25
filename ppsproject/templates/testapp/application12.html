@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BEST | Bharat Excellence Scholarship Test</title>
+	<link rel="icon" type="image/png" href="{% static 'assets/images/favicon.png' %}" />
+	<link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
+	<script src="{% static 'assets/js/jquery.min.js' %}" > </script>
+	<script src="{% static 'assets/js/bootstrap.min.js' %}"> </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <style type="text/css">
+    	.input{
+			border: 2px solid #9d6363;
+			padding: 20px;
+    	}
+    </style> -->
+
+</head>
+
+
+<body>
+	<form  method="POST" action="/stuapp/" enctype="multipart/form-data">
+			{% csrf_token %}
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-2 col-xs-2 col-lg-2 col-sm-2"></div>
+			<div class="col-md-8 col-xs-8 col-lg-8 col-sm-8">
+				<div style="overflow-wrap: break-word;background-color: #ffffff;">
+					<div class="row">
+						<div class="col-md-12 col-xs-12 col-lg-12 col-sm-12" style="padding: 0px;">
+							<nav class="navbar navbar-default">
+								<div class="container-fluid">
+									<div class="navbar-header">
+										<a class="nav navbar-left" href="index.html"><img src="{% static 'assets/images/logo.png'%}" 									</div>
+									<ul class="nav navbar-nav" style="float: right;margin-top: 2%;">
+										<li><a href="index.html">Home</a></li>
+										<li><a href="about.html">About Us</a></li>
+										<li><a href="syllabus.html">Syllabus</a></li>
+										<li><a href="updates.html">Updates</a></li>
+										<li><a href="contact.html">Contact Us</a></li>
+									</ul>
+								</div>
+							</nav>
+						</div>
+					</div>
+				</div>
+				<div style="text-align: center;">
+        			<img src="{% static 'assets/images/sponsoredaddsbanner.png'%}" width="25%"/>
+        		</div>
+			<h3 style="text-align: center;color:blue;margin-top: auto;font-family:Serif;"><span style="font-size: 35px">B</span>HARAT <span style="font-size: 35px" >E</span>XCELLENCE <span style="font-size: 35px">S</span>CHOLARSHIP
+						<span style="font-size: 35px">T</span>EST</h3>
+				<div class="row" style="margin-bottom: 3%;">
+					<div class="col-md-12 col-xs-12 col-lg-12 col-sm-12">
+						<div class="btn-group btn-group-justified">
+						    <!--<a href="application.html" class="btn btn-success">Application Form</a>-->
+						    <div class="btn-group">
+                                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                                Application Form<span class="caret"></span></button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="{% static 'assets/images/application.pdf' %}"  target="_blank">Offline Application</a></li>
+                                    <li><a href="application.html" target="_blank">Online Application</a></li>
+                                </ul>
+                             </div>
+						    <div class="btn-group">
+                                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                              Free Sample Question Papers <span class="caret"></span></button>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="{% static 'assets/Sample/Class-VI.pdf' %}"target="_blank">VI Class</a></li>
+                                        <li><a href="{% static 'assets/Sample/Class-VII.pdf' %}" target="_blank">VII Class</a></li>
+                                        <li><a href="{% static 'assets/Sample/Class-VIII.pdf' %}" target="_blank">VIII Class</a></li>
+                                        <li><a href="{% static 'assets/Sample/Class-IX.pdf' %}" target="_blank">IX Class</a></li>
+                                        <li><a href="{% static 'assets/Sample/Class-X.pdf' %}" target="_blank">X Class</a></li>
+                                    </ul>
+                             </div>
+						    <a href="Results.html" class="btn btn-success">Results</a>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+				    <!--<h4 style="color:red;margin-bottom: 2%;color:#640606;font-family:serif;font-weight:bold;text-align:center;">For Offline Application Form <a href="assets/images/application.pdf" target="_blank">Click Here</a></h4> -->
+					<h3 style="color:red;text-align: center;margin-bottom: 2%;color:#640606;font-family:serif;font-weight:bold;" ><u>Online Application Form</u></h3>
+					<div class="col-md-12 col-xs-12 col-lg-12 col-sm-12">
+						<form class="form-horizontal" action="">
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="fname">First Name<sup style="color:red;">*</sup></label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control input" id="fname" placeholder="Enter First Name....." name="fname" required>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="lname">Last Name<sup style="color:red;">*</sup></label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control input" id="lname" placeholder="Enter Last Name......" name="lname" required>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="dob">Date Of Birth<sup style="color:red;">*</sup></label>
+								<div class="col-sm-8">
+									<input type="date" class="form-control input" id="dob" placeholder="Enter Date of birth......" name="dob" required>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="board">Board<sup style="color:red;">*</sup></label>
+								<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8">
+									<select class="form-control" id="Board" name="board" required>
+										<option></option>
+										<option value="CBSE"> Central Board of Secondary Education(CBSE) </option>
+										<option value="SB"> State Board </option>
+										<option value="ICSE"> Indian Certificate of Secondary Education (ICSE) </option>
+									</select>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="father">Father's Name<sup style="color:red;">*</sup></label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control input" id="father" placeholder="Enter father name....." name="father" required>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="mother">Mother's Name<sup style="color:red;">*</sup></label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control input" id="mother" placeholder="Enter mother name....." name="mother" required>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="qualification">Qualification<sup style="color:red;">*</sup></label>
+								<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8">
+									<select class="form-control" id="qualification" name="qualification" required>
+										<option></option>
+										<option value="06">6th class</option>
+										<option value="07">7th class</option>
+										<option value="08">8th class</option>
+										<option value="09">9th class</option>
+										<option value="10">10th class</option>
+									</select>
+								</div>
+						    </div>
+						    <div class="form-group">
+								<label class="control-label col-sm-2" for="sname">School Name <sup style="color:red;">*</sup></label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control input" id="sname" placeholder="Enter School name....." name="sname" required>
+								</div>
+							</div>
+						    <div class="form-group">
+								<label class="control-label col-sm-2" for="address">Address</label>
+								<div class="col-sm-8">
+								    <label class="control-label" for="address">School Address</label>
+									<textarea type="text" class="form-control input" id="address" placeholder="Enter School Address....." name="saddress"></textarea><br>
+									<label class="control-label" for="address">Home Address</label>
+									<textarea type="text" class="form-control input" id="address" placeholder="Enter Home Address....." name="haddress"></textarea>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="state">State<sup style="color:red;">*</sup></label>
+								<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8">
+									<select class="form-control" id="state" name="state" required>
+										<option></option>
+										<option value="AP">Andhra Pradesh</option>
+										<option value="AR">Arunachal Pradesh</option>
+										<option value="AS">Assam</option>
+										<option value="BR">Bihar</option>
+										<option value="CG">Chhattisgarh</option>
+										<option value="DL">Delhi</option>
+										<option value="GA">Goa</option>
+										<option value="GJ">Gujarat</option>
+										<option value="HR">Haryana</option>
+										<option value="HP">Himachal Pradesh</option>
+										<option value="JK">Jammu and Kashmir</option>
+										<option value="JH">Jharkhand</option>
+										<option value="KA">Karnataka</option>
+										<option value="KL">Kerala</option>
+										<option value="MP">Madhya Pradesh</option>
+										<option value="MH">Maharashtra</option>
+										<option value="MN">Manipur</option>
+										<option value="ML">Meghalaya</option>
+										<option value="MZ">Mizoram</option>
+										<option value="NL">Nagaland</option>
+										<option value="OR">Orissa</option>
+										<option value="PB">Punjab</option>
+										<option value="RJ">Rajasthan</option>
+										<option value="SK">Sikkim</option>
+										<option value="TN">Tamil Nadu</option>
+										<option value="TS">Telangana</option>
+										<option value="TR">Tripura</option>
+										<option value="UP">Uttar Pradesh</option>
+										<option value="UK">Uttarakhand</option>
+										<option value="WB">West Bengal</option>
+									</select>
+								</div>
+						    </div>
+						    <div class="form-group">
+								<label class="control-label col-sm-2" for="anum">Aadhar Number<sup style="color:red;">*</sup></label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control input" id="anum" placeholder="Enter Aadhar Number....." name="aadharnum" required>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="num">Phone Number<sup style="color:red;">*</sup></label>
+								<div class="col-sm-8">
+									<input type="tel" class="form-control input" id="num" placeholder="Enter Phone Number....." name="phonenum" required>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="email">Email ID<sup style="color:red;">*</sup></label>
+								<div class="col-sm-8">
+									<input type="email" class="form-control input" id="email" placeholder="Enter Email....." name="email" required>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="photo">Upload Photo</label>
+								<div class="col-sm-8">
+									<input type="file" class="form-control input" id="photo" placeholder="Enter Email....." name="personphoto">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="signature">Signature</label>
+								<div class="col-sm-8">
+									<input type="file" class="form-control input" id="signature" placeholder="Enter Email....." name="signaturephoto">
+								</div>
+							</div>
+                                <div class="form-group">
+
+								<div class="col-sm-8">
+									<input type="hidden" class="form-control input"  value="online"  name="hidden1" id="hidden12">
+								</div>
+							</div>
+
+
+							<div class="form-group" style="margin-top:5%;">
+								<!--<div class="col-sm-offset-1 col-sm-2">-->
+								<!--	<button type="submit" class="btn btn-warning">Submit</button>-->
+								<!--</div>-->
+								<!--<div class="col-sm-2">-->
+								<!--	<button type="submit" class="btn btn-warning">Submit & Pay</button>-->
+								<!--</div>-->
+								<!--<div class="col-sm-2">-->
+								<!--	<button type="submit" class="btn btn-warning">Reset</button>-->
+								<!--</div>-->
+								<!--<div class="col-sm-2">-->
+								<!--	<button type="submit" class="btn btn-warning">Cancel</button>-->
+								<!--</div>-->
+								<div class="col-md-offset-2" style="display:inline-flex;">
+								    <ul style="list-style:none">
+								        <li><button type="submit" class="btn btn-warning">Submit</button></li>
+								    </ul>
+
+								    <ul style="list-style:none">
+								        <li><button type="submit" class="btn btn-warning">Submit & Pay</button></li>
+								    </ul>
+								    <ul style="list-style:none">
+								        <li><button type="submit" class="btn btn-warning">Reset</button></li>
+								    </ul>
+								    <ul style="list-style:none">
+								        <li><button type="submit" class="btn btn-warning">Cancel</button></li>
+								    </ul>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+                <div class="row">
+					<div class=" col-md-12 col-sm-12 col-xs-12 col-lg-12">
+						<hr style="border-top:1px solid red;">
+						<p style="font-size:100%;text-align:center;"><a href="index.html" style="color:#640606;">Home</a>  |  <a href="about.html" style="color:#640606;">About</a>  |  <a href="syllabus.html" style="color:#640606;">Syllabus</a>  |  <a href="updates.html" style="color:#640606;">Updates</a>  |  <a href="application.html" style="color:#640606;">Application Form</a>  |  <a href="qtnpapers.html" style="color:#640606;">Sample Question Papers</a>  |  <a href="Results.html" style="color:#640606;">Results</a>  |  <a href="contact.html" style="color:#640606;">Contact</a></p>
+						<p style="font-size:100%;text-align:center;"> Designed By <a href="www.pnvsoft.com" target="_blank">PNV Soft Tech</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Admin add Page</h1>
+<form method="post">
+    {% csrf_token %}
+    Enter name:
+    <input type="text" name="a1"><br>
+    Enter Password:
+    <input type="password" name="a2"><br>
+    <select name="a3">
+            <option> </option>
+            <option value="notifications">Notifications </option>
+            <option value="studentscreen">Student Screen </option>
+            <option value="subject">Subject </option>
+        </select>
+    <input type="submit" value="Add Admin">
+
+</form>
+</body>
+</html>

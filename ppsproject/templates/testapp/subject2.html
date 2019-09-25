@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+{{ msg1 }}
+{{ msg2 }}
+
+{#<form method="post" action="/addquestions/">#}
+{#{% csrf_token %}#}
+{#<select name="c1">#}
+{#{% for b in scode %}#}
+{#    <option value="code14">{{ b.scode }}</option>#}
+{#{% endfor %}#}
+{#</select>#}
+{#<input type="submit" value="submit">#}
+{#</form><br><br>#}
+<h1>add questions</h1>
+<form method="post" action="/home/">
+    {% csrf_token %}
+   enter exam code:
+   <select name="e1">
+    {% for b in code %}
+        <option>{{ b.code }}</option>
+
+     {% endfor %}
+   </select><br><br>
+    select subject code:
+    <select name="s1">
+{% for b in scode %}
+    <option>{{ b.scode }}</option>
+{% endfor %}
+</select><br>
+     enter question:
+    <input type="text" name="q" size="40" placeholder="enter question here" required><br><br>
+        enter option1:
+        <input type = 'checkbox' value='ans1' name="a"><input type="text" name="q1" required>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        enter option2:
+        <input type = 'checkbox' value='ans2' name="a"><input type="text" name="q2" required><br>
+        enter option3:
+        <input type = 'checkbox' value='ans3' name="a"><input type="text" name="q3" required>&nbsp;&nbsp;
+        enter option4:
+        <input type = 'checkbox' value='ans4' name="a"><input type="text" name="q4" required><br><br>
+{#enter question:<br>#}
+{#<input type="text" name="q1" required><br>#}
+{#enter option1:<br>#}
+{#<input type="text" name="o1" required><br>#}
+{#    enter option2:<br>#}
+{#<input type="text" name="o2" required><br>#}
+{#enter option3:<br>#}
+{#<input type="text" name="o3" required><br>#}
+{#enter option4:<br>#}
+{#<input type="text" name="o4" required><br>#}
+{#enter option5:<br>#}
+{#<input type="text" name="o5" required><br>#}
+{#enter answer:<br>#}
+{#<input type="text" name="a1" required><br>#}
+<input type="submit" value="submit">
+</form>
+<a href="/home">question  can upload csv file</a><br><br>
+<a href="/viewallquestions">view all questions</a>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+function myFunction() {
+  var x = document.getElementById("myInput");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
+</head>
+<body>
+{#<script language="JavaScript">#}
+{#  javascript:window.history.forward(0);#}
+{#</script>#}
+<h1>Login Page</h1>
+{#{{ msg }}#}
+{%  for messge in messages %}
+    <script>
+       alert('{{ messge }}');
+    </script>
+{%  endfor %}
+<form method="post">
+    {% csrf_token %}
+    Enter name:
+    <input type="text" name="t1"><br>
+    Enter Password:
+    <input type="password" name="t2" id="myInput"><span class="glyphicon glyphicon-eye-open" type="checkbox"  onclick="myFunction()">show</span><br>
+    <input type="submit" value="login">
+</form>
+<br><br>
+<a href="/adminforget" class="btn btn-primary">Forget Password</a>
+</body>
+</html>
+
+{#<input type="checkbox" onclick="myFunction()">#}

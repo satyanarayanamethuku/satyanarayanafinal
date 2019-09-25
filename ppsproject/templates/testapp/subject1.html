@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Subject Screen</h1>
+<a href="/sub1all">view/edit/delete</a><br><br>
+{#<h1>{{ msg }}</h1>#}
+<div>
+ {% for message in messages %}
+{#    <h3>{{message}}</h3>#}
+     <script>
+         alert('{{ message }}');
+    </script>
+    {% endfor %}
+</div>
+<form method="post">
+    {% csrf_token %}
+    <select name="p1" required>
+        <option></option>
+        <option value="lr">Logical Reasoning</option>
+        <option value="gk">G.K</option>
+        <option value="ma">Mathematics</option>
+        <option value="sc">Scince</option>
+    </select>
+     <select name="p2" required>
+      <option></option>
+     <option value="06">6th class</option>
+     <option value="07">7th class</option>
+     <option value="08">8th class</option>
+     <option value="09">9th class</option>
+     <option value="10">10th class</option>
+     </select>
+     <select name="p3" required>
+         <option></option>
+         <option value="CBSE"> Central Board of Secondary Education(CBSE) </option>
+         <option value="SB"> State Board </option>
+         <option value="ICSE"> Indian Certificate of Secondary Education (ICSE) </option>
+      </select>
+    <input type="submit" value="add">
+</form>
+
+</body>
+</html>

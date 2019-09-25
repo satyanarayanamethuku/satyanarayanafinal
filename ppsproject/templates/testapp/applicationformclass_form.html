@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+        <h1>Update Student Information</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <input type='text' name='firstName' value="{{applicationformclass.firstName}}">
+            <br>
+             <input type='text' name='lastName' value="{{applicationformclass.lastName}}">
+            <br>
+
+            <input type='submit' value='update'>
+
+        </form>
+</body>
+</html>
+
+
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>subject</title>
+</head>
+<body>
+    <h1>Add question screen</h1>
+    <h3>{{msg}}</h3>
+{#    <h3>{{msg1}}</h3>#}
+{#   <h3>{{msg2}}</h3>#}
+   <h2>{{msg4}}</h2>
+   <h1>{{msg5}}</h1>
+    <h1>csv file question adding</h1>
+    <form method="POST" action="/home/" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="file" required><br>
+        <input type="submit" value="add exam">
+    </form>
+
+    <br><br>
+
+{#    <h1>manual question adding</h1>#}
+{#    <form method="POST" action="/home/">#}
+{#        {% csrf_token %}#}
+{#        enter question:#}
+{#        <input type="text" name="q" size="40" placeholder="enter question here" required><br><br>#}
+{#        enter option1:#}
+{#        <input type = 'checkbox' value='ans1' name="a"><input type="text" name="q1" required>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#}
+{#        enter option2:#}
+{#        <input type = 'checkbox' value='ans2' name="a"><input type="text" name="q2" required><br>#}
+{#        enter option3:#}
+{#        <input type = 'checkbox' value='ans3' name="a"><input type="text" name="q3" required>&nbsp;&nbsp;#}
+{#        enter option4:#}
+{#        <input type = 'checkbox' value='ans4' name="a"><input type="text" name="q4" required><br><br>#}
+{#        enter examcode:#}
+{#        <input type="text" name="e1" required><br>#}
+{#        <select name="e1" required>#}
+{#            {% for b in code %}#}
+{#                <option>{{ b.code }}</option>#}
+{#            {% endfor %}#}
+{#        </select><br>#}
+{#        enter subjectcode:#}
+{#        <input type="text" name="s1" required>#}
+{#        <select name="s1" required>#}
+{#            {% for b in scode %}#}
+{#                <option>{{ b.scode }}</option>#}
+{#            {% endfor %}#}
+{#        </select><br>#}
+{#        <br><br>#}
+{#        <input type="submit" value="add exam">#}
+{#    </form>#}
+<a href="/sub2">manual questions add</a>
+<h3>search each examcode how many questions are there and each subject code how many questions</h3>
+<form method="post" action="/escount/">
+    {% csrf_token %}
+    enter exam code or subject code:
+    <input type="text" name="name1" required placeholder="enter the exam code or subject code"><br>
+    <input type="submit" value="submit">
+</form>
+    <a href="/viewallquestions">view all questions</a>
+<div>
+    {%  for message in messages %}
+       <script>
+         alert('{{ message }}');
+       </script>
+    {% endfor %}
+</div>
+</body>
+</html>

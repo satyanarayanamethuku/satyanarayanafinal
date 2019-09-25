@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    {% for message in messages %}
+        <script>
+          alert('{{message}}');
+        </script>
+    {% endfor %}
+</div>
+{% for a in form %}
+    <ul>
+      <li>subjectcode:<a href="/subcount">{{a.scode  }}</a></li>
+      <li><a href="/subjectupdate/{{ a.id }}">edit</a>&nbsp;&nbsp;&nbsp;<a href="/subject1del/{{ a.id }}">delete</a> </li>
+    </ul>
+{% endfor %}
+<a href="/sub1">new subject code add</a>
+</body>
+</html>

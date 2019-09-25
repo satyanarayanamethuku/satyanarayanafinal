@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% for b in form %}
+
+    <ul>
+    <li>ID:{{ b.id }}</li>
+    <li>Name:{{ b.name }}</li>
+    <li>Password:{{ b.password }}</li>
+    <li>Bord:{{ b.bord }}</li>
+    </ul>
+
+
+{% endfor %}
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Notification Screen</h1>
+<form method="post">
+    {% csrf_token %}
+    enter subjects:<br>
+    <input type="text" name="t1"><br>
+    enter  any date (or) import date:<br>
+    <input type="text" name="d1"><br>
+    enter body information:<br>
+    <textarea rows="6" cols="60" name="c1"></textarea><br>
+    <input type="submit" value="submit">
+</form>
+{% for message in messages %}
+    <script>
+      alert('{{ message }}');
+    </script>
+{% endfor %}
+</body>
+</html>

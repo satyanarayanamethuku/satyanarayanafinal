@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>student login profile</h1>
+firstname:{{ dbuser.firstName }}<br>
+lastname:{{ dbuser.lastName }}<br>
+state:{{ dbuser.state }}<br>
+board:{{ dbuser.board }}<br>
+fatherName:{{ dbuser.fatherName }}<br>
+motherName:{{ dbuser.motherName }}<br>
+qualification:{{ dbuser.qualification }}<br>
+schoolName:{{ dbuser.schoolName }}<br>
+schoolAddress:{{ dbuser.schoolAddress }}<br>
+homeAddress:{{ dbuser.homeAddress }}<br>
+aadharNumber:{{ dbuser.aadharNumber }}<br>
+phoneNumber:{{ dbuser.phoneNumber }}<br>
+username:{{ dbuser.username }}<br>
+emailID:{{ dbuser.emailID }}<br>
+password:{{ dbuser.date_of_birth }}<br>
+form apply through:{{ dbuser.status }}<br>
+personPhoto:<img src="{{ dbuser.personPhoto.url }}" height="80px" width="80px"><br>
+signaturePhoto:<img src="{{ dbuser.signaturePhoto.url }}" height="80px" width="80px"><br>
+
+</body>
+</html>

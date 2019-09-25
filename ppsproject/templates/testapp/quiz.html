@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        .total{
+            padding: 60px 80px;
+        }
+    </style>
+</head>
+<body>
+<h1>well come to student dash board</h1><br>
+ <h1>Python Quiz</h1>
+
+<form action= '#' method="POST">
+    {% csrf_token %}
+
+    {% for question in questions %}
+<div class = 'question'>{{question.id}}.{{ question.question }}</div>
+<div id= "choices" class='select'>
+    <input type = "radio" name="{{question.id}}" value="{{question.choice_one}}" required>{{question.choice_one}}<br>
+    <input type = "radio" name="{{question.id}}" value="{{question.choice_two}}" required>{{question.choice_two}}<br>
+    <input type = "radio" name="{{question.id}}" value="{{question.choice_three}}" required>{{question.choice_three}}<br>
+    <input type = "radio" name="{{question.id}}" value="{{question.choice_four}}" required>{{question.choice_four}}<br>
+    <input type = "radio" name="{{question.id}}" value="{{question.choice_five}}" required>{{question.choice_five}}<br>
+</div><br>
+
+    {% endfor %}
+ <input type="submit" value="submit"/>
+
+</form>
+</body>
+</html>
